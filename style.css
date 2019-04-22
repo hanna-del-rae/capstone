@@ -1,0 +1,159 @@
+
+/*Variables*/
+
+:root {
+  --primary: #ddd;
+  --dark: #333;
+  --light: #fff;
+  --shadow: 0 1px 5px rgba(104, 104, 104, 0.4);
+}
+
+/*Core Styles*/
+
+html {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var (--dark);
+}
+
+body {
+  background: #ccc;
+  margin: 30px 55px;
+  line-height: 1.4;
+}
+
+.btn {
+  background: var(--dark);
+  color: var(--light);
+  padding: 0.6rem 1.3rem;
+  text-decoration: none;
+  border: 0;
+  border-radius: 2px;
+}
+
+img {
+  max-width: 100%;
+}
+ 
+.wrapper {
+  display: grid;
+  grid-gap: 20px;
+}
+
+/*Navigation Syles*/
+
+ #logo {
+    height: 200px;
+    font-size: 2em;
+    color: black;
+    padding-bottom: 2x;
+  }
+
+  #logo img {
+    padding-right: 15px;
+  }
+
+  ul {
+    display: inline;
+    list-style: none;
+  }
+  
+  li {
+    display: inline;
+    cursor: pointer;
+    padding: 20px;
+    text-align: center;
+    float: right;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+
+
+  /* 
+.main-nav ul {
+  display: grid;
+  grid-gap: 20px;
+  padding: 0;
+  list-style: none;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.main-nav a {
+  background: var (--light);
+  display: block;
+  text-decoration: none;
+  padding: 1.1em .5em;
+  color: var(--dark);
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  box-shadow: var(--shadow);
+  text-align: center;
+  border-radius: 2px;
+}
+
+.main-nav a:hover {
+  background: var(--dark);
+  color: var(--light);
+  cursor: pointer;
+  transition: color 0.25s linear 80ms;
+}
+
+ */
+
+
+  
+
+
+/*Top Container/Showcase*/
+
+
+
+/* Second Container */
+
+.second-container {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-areas: 
+  'info top-box-a'
+  'info top-box-b'
+  'info-text top-box-c';
+}
+
+.info {
+  grid-area: info;
+  height: auto;
+}
+
+.info-text {
+  grid-area: info-text;
+}
+
+.info img {
+  width: 60%;
+height:100%;
+  overflow: auto;
+}
+
+.top-box-a {
+  grid-area: top-box-a;
+}
+
+.top-box-a img,
+.top-box-b img,
+.top-box-c img {
+  display: block;
+  float: left;
+  width: 35%;
+  height: auto;
+}
+
+.top-box-b {
+  grid-area: top-box-b;
+}
+
+.top-box-c {
+  grid-area: top-box-c;
+}
+
