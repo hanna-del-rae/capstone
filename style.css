@@ -42,7 +42,9 @@ body {
 .btn:hover {
   background-color: rgb(117, 12, 42);
   box-shadow: var(--shadow);
-  padding: 16px;
+  transition: all 300ms ease-in 40ms;
+  color: white;
+  text-decoration: none;
 }
 
 img {
@@ -68,25 +70,46 @@ img {
 }
 
 h1 {
-  font-size: 5rem;
+  font-size: 5.4rem;
   padding: 0px;
   margin: 24px 0;
 }
 
+h2 {
+  font-size: 4.4rem;
+}
+
+h3 {
+  font-size: 4rem;
+  font-weight: 500;
+}
+
 p {
-  font-size: 3.2rem;
+  font-size: 3.4rem;
+  font-weight: 400;
   padding: 24px 0px;
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+  color: #A70532;
+  font-size: 3.2rem;
+  font-weight: 400;
+}
 
+a:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  color:#d60b43;
+}
 
 
 /* Logo */
 
 #logo {
  height: 150px;
- font-size: 4rem;
+ font-size: 5rem;
  color: black;
  text-decoration: none;
  
@@ -146,6 +169,7 @@ min-height: 300px;
   text-decoration: none;
   background-color: rgb(117, 12, 42);
   cursor: pointer;
+  transition: all 300ms ease-in 40ms;
 }
   
 
@@ -305,18 +329,28 @@ margin-bottom: 48px;
   padding: 32px auto;
   margin: 0;
 }
+.boxes-text {
+  padding: 1.3em;
+}
 
 .box {
   background-color: var(--light);
   color: var(--dark);
-  text-align: center;
+  text-align: left;
   border-radius: 5px;
   width: 100%;
+  -ms-word-break: normal;
 }
 
 .box img {
   width: 100%;
   border-radius: 5px 5px 0 0;
+}
+
+.courses {
+  text-transform: uppercase;
+  font-size: 3.5rem;
+  font-weight: 300;
 }
 
 
@@ -376,6 +410,7 @@ margin: 0 24px;
   height: auto;
   overflow: hidden;
 }
+
 
 /*
 
@@ -451,6 +486,10 @@ I initially tried this with grid-templte-areas before swtcing to flex-box. It wo
   text-decoration: underline;
 }
 
+#copy {
+  font-size: 3rem;
+}
+
 /* Scrollbar */
 
 /* width */
@@ -467,12 +506,12 @@ I initially tried this with grid-templte-areas before swtcing to flex-box. It wo
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: rgb(214,11,67);
-  background: linear-gradient(180deg, rgba(214,11,67,1) 0%, rgba(167,5,50,1) 40%, rgba(156,2,2,1) 100%);
+  background: rgb(167,5,50);
+background: linear-gradient(180deg, rgba(167,5,50,1) 0%, rgba(214,11,67,1) 50%, rgba(218,35,2,0.9399073401162791) 100%);
   border-radius: 40px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #b30000; 
+  background: #A70532; 
 }
