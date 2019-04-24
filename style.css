@@ -5,7 +5,7 @@
   --primary: #ddd;
   --dark: #262626;
   --light: #fff;
-  --shadow: 0 1px 5px rgba(104, 104, 104, 0.4);
+  --shadow: 0 1px 5px rgba(104, 104, 104, 0.7);
   --pink: #A70532; 
 }
 
@@ -26,14 +26,23 @@ body {
 }
 
 .btn {
+  display: flex;
+  justify-content: center;
   background: var(--pink);
   color: var(--light);
-  padding: 8px 10rem;
+  padding: 8px;
+  text-align: center;
   text-decoration: none;
   border: 0;
   border-radius: 4px;
-  font-size: 3.4rem;
+  font-size: 4rem;
   margin: 12px 0px;
+}
+
+.btn:hover {
+  background-color: rgb(117, 12, 42);
+  box-shadow: var(--shadow);
+  padding: 16px;
 }
 
 img {
@@ -136,6 +145,7 @@ min-height: 300px;
 .main-nav a:hover {
   text-decoration: none;
   background-color: rgb(117, 12, 42);
+  cursor: pointer;
 }
   
 
@@ -198,7 +208,7 @@ min-height: 300px;
 
 .showcase-text {
   display: inline-block;
-  width: 30%;
+  width: 35%;
   padding-left: 24px;
   text-align: left;
 }
@@ -211,25 +221,18 @@ margin-bottom: 48px;
 /* Second Container */
 
 .second-container {
-  display: grid;
+  display: flex;
   grid-gap: 20px;
   padding: 32px 24px;
-  margin: 0 auto;
+  margin: 0;
   background-color: #fff;
-  grid-template-areas: 
-  'info info top-box-a top-box-a'
-  'info info top-box-b top-box-b'
-  'info-text info-text top-box-c top-box-c';
 }
 
 .info {
-  grid-area: info;
+  width: 60%;
+  margin: 1em;
+  position: relative;
 }
-
-.info-text {
-  grid-area: info-text;
-}
-
 
 .info img {
   width: 100%;
@@ -237,42 +240,47 @@ margin-bottom: 48px;
   overflow: hidden;
 } 
 
+.info-boxes {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 3;
+  width: 40%;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1em;
+  margin: 1em;
+}
+
+.info-text {
+  display: inline-block;
+  width: 100%;
+}
+
 .top-box-a img,
 .top-box-b img,
 .top-box-c img {
   display: inline-block;
   width: 35%;
-  height: auto%;
+  height: auto;
+  overflow: hidden;
+  position: center;
   vertical-align: middle;
+}
+
+.top-box-a,
+.top-box-b,
+.top-box-c {
+  box-shadow: var(--shadow);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  padding: 1.2em;
+  margin-bottom: 1em;
 }
 
 .box-text {
   display: inline-block;
   vertical-align: middle;
-}
-
-.top-box-a {
-  grid-area: top-box-a;
-  box-shadow: var(--shadow);
-}
-
-.top-box-b {
-  grid-area: top-box-b;
-  box-shadow: var(--shadow);
-}
-
-.top-box-c {
-  grid-area: top-box-c;
-  box-shadow: var(--shadow);
-}
-
-.top-box-a, 
-.top-box-b, 
-.top-box-c {
-  width: 100%;
-}
-
-h3 {
 }
 
 
@@ -316,16 +324,62 @@ h3 {
 
 .last-container {
   width: 100%;
-  display: grid;
-  grid-gap: 20px;
+  display: flex;
   padding: 32px 24px;
   margin: 0px;
   background-color: #fff;
-  grid-template-areas: 
-  'thesis  top-box-d'
-  'thesis top-box-e'
-  'thesis-text top-box-f';
 }
+
+.thesis {
+  width: 110%;
+}
+
+.box-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 24px;  
+}
+
+.top-box-d,
+.top-box-e {
+  display: flex;
+  box-shadow: var(--shadow);
+}
+
+.thesis video {
+  display: inline-block;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+} 
+
+.thesis-boxes {
+width: 100%;
+margin: 0 24px;
+}
+
+.top-box-d,  
+.top-box-e {
+  display: flex;
+  height: 50%;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+
+.top-box-d img,
+.top-box-e img {
+  display: inline-block;
+  width: 35%;
+  height: auto;
+  overflow: hidden;
+}
+
+/*
+
+I initially tried this with grid-templte-areas before swtcing to flex-box. It worked, but forced the sizes of lower boxes to be different than the others. 
 
 .thesis {
   grid-area: thesis;
@@ -353,11 +407,6 @@ h3 {
   vertical-align: middle;
 }
 
-.box-text {
-  display: inline-block;
-  vertical-align: middle;
-}
-
 .top-box-d {
   grid-area: top-box-d;
   box-shadow: var(--shadow);
@@ -378,4 +427,22 @@ h3 {
 .top-box-e, {
   height: auto;
   width: 100%;
+}  */
+
+
+/* Footer Area */
+
+.footer {
+  background-color: #A70532;
+  color: #fff;
+  display: inline-block;
+  width: 100%;
+  padding: 50px 24px;
+}
+
+.footer a {
+  text-decoration: none;
+  color: var(--light);
+  padding-right: 24px;
+  float: right;
 }
