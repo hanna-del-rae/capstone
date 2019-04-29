@@ -104,74 +104,69 @@ a:hover {
   color:#d60b43;
 }
 
-
-/* Logo */
-
-#logo {
- height: 150px;
- font-size: 5rem;
- color: black;
- text-decoration: none;
- 
-}
-
-#logo img {
- padding-right: 15px;
- height: 70%;
- padding-top: 20px;
-}
-
-.logo #logo {
-display: flex;
-align-items: center;
-justify-content: center;
-flex-shrink: 3;
-text-transform: uppercase;
-background-color: #fff;
-min-height: 300px;
-}
-
-
-/*Navigation Syles*/
+/* Desktop View provides logo display in media queries. Elements are hidden in mobile view. */
+  
 
 .main-nav ul {
-  height: auto;
-  padding: 0;
+display: none;
+}
+
+#logo {
+  display: none;
+}
+
+/* End hidden elements */
+
+/* Mobile Nav */
+
+
+.mobile-nav {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  list-style: none;
-  background-color: #A70532;
+  flex-flow: row nowrap;
+  align-content: center;
+  justify-content: space-around;
+  background: var(--pink);
   width: 100%;
+  min-height: 150px;
   margin: 0;
 }
 
-.main-nav li {
-  display: inline-block;
-  cursor: pointer;
-  text-align: center;
-  margin: 0;
-  padding: 0;
+.icon-logo {
+  content: url(/capstone_colmar_assets/images/ic-logo.svg);
+  width: 3em;
 }
 
-.main-nav a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  color: var(--light);
-  font-weight: 500;
-  font-size: 2.1em;
-  padding: 50px;
+.icon-campus {
+  content: url(/capstone_colmar_assets/images/ic-on-campus.svg);
+  width: 3em;
 }
 
-.main-nav a:hover {
-  text-decoration: none;
-  background-color: rgb(117, 12, 42);
-  cursor: pointer;
-  transition: all 300ms ease-in 40ms;
+.icon-online {
+  content: url(/capstone_colmar_assets/images/ic-online.svg);
+  width: 3em;
 }
-  
+
+.icon-login {
+  content: url(/capstone_colmar_assets/images/ic-login.svg);
+  width: 3em;
+}
+
+.test-icon {
+  content: url(/capstone_colmar_assets/images/ic-online.svg);
+  width: 3em;
+  color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
 
   /* 
 .main-nav ul {
@@ -212,7 +207,7 @@ min-height: 300px;
 
 .top-container {
   display: flex;
-  flex-direction: row;
+  flex-flow: column wrap;
   align-items: center;
   width: 100%;
   background-color: var(--dark);
@@ -224,7 +219,7 @@ min-height: 300px;
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  width: 60%;
+  width: 100%;
   height: auto;
   vertical-align: middle;
   padding-right: 24px;
@@ -232,7 +227,7 @@ min-height: 300px;
 
 .showcase-text {
   display: inline-block;
-  width: 35%;
+  width: 100%;
   padding-left: 24px;
   text-align: left;
 }
@@ -246,15 +241,17 @@ margin-bottom: 48px;
 
 .second-container {
   display: flex;
+  flex-direction: column;
   grid-gap: 20px;
   padding: 32px 24px;
-  margin: 0;
+  margin: 1em auto;
   background-color: #fff;
 }
+/* Main Info Section */
 
 .info {
-  width: 60%;
-  margin: 1em;
+  width: 100%;
+  margin: 1em auto;
   position: relative;
 }
 
@@ -264,42 +261,58 @@ margin-bottom: 48px;
   overflow: hidden;
 } 
 
-.info-boxes {
-  display: flex;
-  flex-direction: column;
-  flex-shrink: 3;
-  width: 40%;
-  align-items: flex-start;
-  justify-content: space-between;
-  padding: 1em;
-  margin: 1em;
-}
-
 .info-text {
   display: inline-block;
   width: 100%;
 }
 
+/* Info Boxes Section */
+
+.info-boxes {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 3;
+  width: 100%;
+  align-items: flex-start;
+  justify-content: space-around;
+  padding: 1em;
+  margin: 1em auto;
+}
+
+
+
 .top-box-a img,
 .top-box-b img,
 .top-box-c img {
   display: inline-block;
-  width: 35%;
+  width: 100%;
   height: auto;
   overflow: hidden;
   position: center;
-  vertical-align: middle;
+  padding: 0;
+  margin: 0;
+}
+
+.orientation-img {
+  content: url(/capstone_colmar_assets/images/information-orientation-mobile.jpg)
+}
+
+.campus-img {
+  content: url(/capstone_colmar_assets/images/information-campus-mobile.jpg)
+}
+
+.lecture-img {
+  content: url(/capstone_colmar_assets/images/information-guest-lecture-mobile.jpg)
 }
 
 .top-box-a,
 .top-box-b,
 .top-box-c {
-  box-shadow: var(--shadow);
   width: 100%;
-  height: 100%;
+  height: auto;
   display: flex;
-  padding: 1.2em;
-  margin-bottom: 1em;
+  flex-direction: column;
+  margin: auto;
 }
 
 .top-box-a:hover,
@@ -311,7 +324,7 @@ margin-bottom: 48px;
 
 .box-text {
   display: inline-block;
-  vertical-align: middle;
+  width: 100%;
 }
 
 
@@ -509,6 +522,12 @@ I initially tried this with grid-templte-areas before swtcing to flex-box. It wo
   font-size: 3rem;
 }
 
+
+
+
+
+
+
 /* Scrollbar */
 
 /* width */
@@ -536,37 +555,214 @@ background: linear-gradient(180deg, rgba(167,5,50,1) 0%, rgba(214,11,67,1) 50%, 
 }
 
 
-/* Media Queries 
 
-@media screen and (max-width: 600px){
-  .top-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    background-color: var(--dark);
-    padding: 32px 24px;
-    min-height: 1362px;
-  }
+
+
+
+
+
+
+
+/*Media Queries*/ 
+
+@media (min-width: 2600px) {
+
+
+
+/* Logo */
+
+#logo {
+  height: 150px;
+  font-size: 5rem;
+  color: black;
+  text-decoration: none;
   
-  .top-container img {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    width: 60%;
-    height: auto;
-    vertical-align: middle;
-    padding-right: 24px;
-  }
-  
-  .showcase-text {
-    display: inline-block;
-    width: 35%;
-    padding-left: 24px;
-    text-align: left;
-  }
-  
-  .showcase-text p {
-  margin-bottom: 48px;
-  }
-}*/
+ }
+ 
+ #logo img {
+  padding-right: 15px;
+  height: 70%;
+  padding-top: 20px;
+ }
+ 
+ .logo #logo {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ flex-shrink: 3;
+ text-transform: uppercase;
+ background-color: #fff;
+ min-height: 300px;
+ }
+ 
+ 
+ /*Navigation Syles*/
+
+ .mobile-nav {
+   display: none;
+ }
+ 
+ .main-nav ul {
+   height: auto;
+   padding: 0;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   list-style: none;
+   background-color: #A70532;
+   width: 100%;
+   margin: 0;
+ }
+ 
+ .main-nav li {
+   display: inline-block;
+   cursor: pointer;
+   text-align: center;
+   margin: 0;
+   padding: 0;
+ }
+ 
+ .main-nav a {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   text-decoration: none;
+   color: var(--light);
+   font-weight: 500;
+   font-size: 2.1em;
+   padding: 50px;
+ }
+ 
+ .main-nav a:hover {
+   text-decoration: none;
+   background-color: rgb(117, 12, 42);
+   cursor: pointer;
+   transition: all 300ms ease-in 40ms;
+ }
+
+
+
+/* Top Container */
+
+
+.top-container {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  width: 100%;
+  background-color: var(--dark);
+  padding: 32px 24px;
+  min-height: 1362px;
+}
+
+.top-container img {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 60%;
+  height: auto;
+  vertical-align: middle;
+  padding-right: 24px;
+}
+
+.showcase-text {
+  display: inline-block;
+  width: 35%;
+  padding-left: 24px;
+  text-align: left;
+}
+
+.showcase-text p {
+margin-bottom: 48px;
+}
+
+/* Second Container */
+
+.second-container {
+  display: flex;
+  grid-gap: 20px;
+  padding: 32px 24px;
+  margin: 0;
+  background-color: #fff;
+}
+
+.info {
+  width: 60%;
+  margin: 1em;
+  position: relative;
+}
+
+.info img {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+} 
+
+.info-boxes {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 3;
+  width: 40%;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1em;
+  margin: 1em;
+}
+
+.info-text {
+  display: inline-block;
+  width: 100%;
+}
+
+.top-box-a img,
+.top-box-b img,
+.top-box-c img {
+  display: inline-block;
+  width: 35%;
+  height: auto;
+  overflow: hidden;
+  position: center;
+  vertical-align: middle;
+}
+
+.top-box-a,
+.top-box-b,
+.top-box-c {
+  box-shadow: var(--shadow);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  padding: 1.2em;
+  margin-bottom: 1em;
+}
+
+.top-box-a:hover,
+.top-box-b:hover,
+.top-box-c:hover {
+  background-color: var(--primary);
+  transition: all 250ms linear 40ms;
+} 
+
+.box-text {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.orientation-img {
+  content: url(/capstone_colmar_assets/images/information-orientation.jpg)
+}
+
+.campus-img {
+  content: url(/capstone_colmar_assets/images/information-campus.jpg)
+}
+
+.lecture-img {
+  content: url(/capstone_colmar_assets/images/information-guest-lecture.jpg)
+}
+
+
+
+
+}
+
+/* End Media Queries */

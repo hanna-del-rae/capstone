@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="keywords" content="capstone, university, school, codecademy, colmar, academy">
     <link rel="stylesheet" href="./style.css">
     <link rel="icon" href="/capstone_colmar_assets/images/favicon.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Anton|Roboto+Condensed:300,400,700|Roboto:300,400,700" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Colmar ACADEMY</title>
 </head>
 
@@ -17,7 +17,7 @@
 <body>
 <div class="wrapper">
 
-<!--Navigation-->    
+<!--Navigation Desktop-->    
 <div class="logo">
     <a id="logo" href="#">
       <img src="./capstone_colmar_assets/images/ic-logo.svg" alt="Logo Here">
@@ -32,6 +32,15 @@
         <li><a href="#">Sign In</a></li>
     </ul>
 </nav>
+
+<!-- Navigation Mobile -->
+
+<div class="mobile-nav">
+    <span class="icon-logo icon"></span>
+    <span class="icon-campus icon"></span>
+    <span class="icon-online icon"></span>
+    <span class="icon-login icon"></span>
+</div>
 
 
 <!--Top Container-->
@@ -57,7 +66,7 @@
     </div>      
     <div class="info-boxes">
     <div class="top-box top-box-a">
-        <img src="./capstone_colmar_assets/images/information-orientation.jpg" alt="People walking">
+        <img class="orientation-img" alt="People walking">
         <div class="box-text">
           <h2>Orientation date</h4>
           <h3>Tue 10/11 & Wed 10/12 8am-3pm</h5>
@@ -65,7 +74,7 @@
         </div>
     </div>
     <div class="top-box top-box-b">
-        <img src="./capstone_colmar_assets/images/information-campus.jpg" alt="Our Campus">
+        <img class="campus-img" alt="Our Campus">
         <div class="box-text">
           <h2>Our Campus</h4>
           <h3>Find a campus near you</h5>
@@ -73,7 +82,7 @@
         </div>  
     </div>
     <div class="top-box top-box-c">
-        <img src="./capstone_colmar_assets/images/information-guest-lecture.jpg" alt="Oliver Sack">
+        <img class="lecture-img" alt="Oliver Sack">
         <div class="box-text">
           <h2>Our guest lecture</h4>
           <h3>Join a keynote with Oliver Sack about<br> music in medical treatment</h5>
