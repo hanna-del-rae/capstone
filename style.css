@@ -20,7 +20,7 @@ html {
 
 body {
   background:var(--dark);
-  margin: 30px 0px;
+  margin: 0;
   line-height: 1.4;
   font-size: 24px;
 }
@@ -117,7 +117,7 @@ display: none;
 
 /* End hidden elements */
 
-/* Mobile Nav */
+/***************************************** Mobile Nav *********************************************/
 
 
 .mobile-nav {
@@ -203,7 +203,7 @@ display: none;
   
 
 
-/*Top Container/Showcase*/
+/************************************* Top Container/Showcase ********************************/
 
 .top-container {
   display: flex;
@@ -237,7 +237,7 @@ margin-bottom: 48px;
 }
 
 
-/* Second Container */
+/************************************** Second Container ********************************************/
 
 .second-container {
   display: flex;
@@ -275,7 +275,6 @@ margin-bottom: 48px;
   width: 100%;
   align-items: flex-start;
   justify-content: space-around;
-  padding: 1em;
   margin: 1em auto;
 }
 
@@ -312,7 +311,8 @@ margin-bottom: 48px;
   height: auto;
   display: flex;
   flex-direction: column;
-  margin: auto;
+  margin: 0px;
+  padding: 0;
 }
 
 .top-box-a:hover,
@@ -330,7 +330,7 @@ margin-bottom: 48px;
 
 
 
-/* Boxes Section */
+/************************************* Boxes Section ******************************************/
 
 .boxes {
   display: grid;
@@ -338,7 +338,7 @@ margin-bottom: 48px;
   height: auto;
   grid-gap: 32px;
   grid-template-columns: repeat(auto-fit, minmax(1200px, 1fr));
-  padding: 32px 72px ;
+  padding: 32px 24px;
 }
 
 .heading {
@@ -353,8 +353,8 @@ margin-bottom: 48px;
 }
 
 .box {
-  background-color: var(--light);
-  color: var(--dark);
+  background-color: var(--pink);
+  color: var(--light);
   text-align: left;
   border-radius: 5px;
   width: 100%;
@@ -362,24 +362,27 @@ margin-bottom: 48px;
 }
 
 .box:hover {
-  background-color: var(--pink);
-  color: var(--light);
+  background-color: var(--light);
+  color: var(--dark);
+  box-shadow: var(--shadow);
   transition: all 250ms linear 40ms;
+  cursor: pointer;
 }
 
+/* Hidden elements in mobile view */
 .box img {
-  width: 100%;
-  border-radius: 5px 5px 0 0;
+ display: none;
 }
 
-.courses {
-  text-transform: uppercase;
-  font-size: 3.5rem;
-  font-weight: 300;
+.box-subheadings {
+  display: none;
 }
+/* End Hidden elements */
 
 
-/* Last Container */
+
+
+/*********************************** Last Container ********************************************/
 
 .last-container {
   width: 100%;
@@ -391,6 +394,24 @@ margin-bottom: 48px;
 
 .thesis {
   width: 110%;
+  padding: 24px 0px;
+}
+
+.thesis video {
+  display: inline-block;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+} 
+
+.thesis-text {
+  display: none;
+}
+
+/* Thesis Boxes hidden in mobile view- See media queries for desktop styling.*/
+
+.thesis-boxes {
+display: none;
 }
 
 .box-text {
@@ -401,29 +422,11 @@ margin-bottom: 48px;
   margin: 24px;  
 }
 
-.top-box-d,
-.top-box-e {
-  display: flex;
-  box-shadow: var(--shadow);
-}
-
 .top-box-d:hover,
 .top-box-e:hover {
   background-color: var(--primary);
   box-shadow: var(--shadow);
   transition: all 250ms linear 40ms;
-}
-
-.thesis video {
-  display: inline-block;
-  width: 100%;
-  height: auto;
-  overflow: hidden;
-} 
-
-.thesis-boxes {
-width: 100%;
-margin: 0 24px;
 }
 
 .top-box-d,  
@@ -432,6 +435,7 @@ margin: 0 24px;
   height: 50%;
   width: 100%;
   margin-bottom: 20px;
+  box-shadow: var(--shadow);
 }
 
 
@@ -442,6 +446,15 @@ margin: 0 24px;
   height: auto;
   overflow: hidden;
 }
+/* End hidden thesis boxes */
+
+
+
+
+
+
+
+
 
 
 /*
@@ -497,7 +510,9 @@ I initially tried this with grid-templte-areas before swtcing to flex-box. It wo
 }  */
 
 
-/* Footer Area */
+
+
+/******************************************** Footer Area ***********************************/
 
 .footer {
   background-color: #A70532;
@@ -508,6 +523,7 @@ I initially tried this with grid-templte-areas before swtcing to flex-box. It wo
 }
 
 .footer a {
+  display: none;
   text-decoration: none;
   color: var(--light);
   padding-right: 24px;
@@ -532,7 +548,7 @@ I initially tried this with grid-templte-areas before swtcing to flex-box. It wo
 
 /* width */
 ::-webkit-scrollbar {
-  width: 80px;
+  width: 40px;
 }
 
 /* Track */
@@ -560,14 +576,11 @@ background: linear-gradient(180deg, rgba(167,5,50,1) 0%, rgba(214,11,67,1) 50%, 
 
 
 
-
-
-
 /*Media Queries*/ 
 
+
+
 @media (min-width: 2600px) {
-
-
 
 /* Logo */
 
@@ -680,6 +693,7 @@ margin-bottom: 48px;
 
 .second-container {
   display: flex;
+  flex-direction: row;
   grid-gap: 20px;
   padding: 32px 24px;
   margin: 0;
@@ -732,6 +746,8 @@ margin-bottom: 48px;
   width: 100%;
   height: 100%;
   display: flex;
+  flex-direction: row;
+  align-items: center;
   padding: 1.2em;
   margin-bottom: 1em;
 }
@@ -760,6 +776,176 @@ margin-bottom: 48px;
   content: url(/capstone_colmar_assets/images/information-guest-lecture.jpg)
 }
 
+
+/* Boxes Section */
+
+.boxes {
+  display: grid;
+  width: 100%;
+  height: auto;
+  grid-gap: 32px;
+  grid-template-columns: repeat(auto-fit, minmax(1200px, 1fr));
+  padding: 32px 72px ;
+}
+
+.heading {
+  position: relative;
+  display: block;
+  text-align: center;
+  padding: 32px auto;
+  margin: 0;
+}
+.boxes-text {
+  padding: 1.3em;
+}
+
+.box {
+  background-color: var(--light);
+  color: var(--dark);
+  text-align: left;
+  border-radius: 5px;
+  width: 100%;
+  -ms-word-break: normal;
+}
+
+.box:hover {
+  background-color: var(--pink);
+  color: var(--light);
+  transition: all 250ms linear 40ms;
+}
+
+.box img {
+  display: inline-block;
+  width: 100%;
+  border-radius: 5px 5px 0 0;
+}
+
+.courses {
+  text-transform: uppercase;
+  font-size: 3.5rem;
+  font-weight: 300;
+}
+
+.box-subheadings {
+  display: inline-block;
+}
+
+
+/******************** Last Container *************************/
+
+.last-container {
+  width: 100%;
+  display: flex;
+  padding: 32px 24px;
+  margin: 0;
+  background-color: #fff;
+}
+
+.thesis video {
+  display: inline-block;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  
+} 
+
+.thesis {
+  width: 60%;
+  padding: 24px 12px;
+}
+
+
+.thesis-text {
+  display: inline-block;
+}
+
+
+.thesis-boxes {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  height: auto;
+  padding: 24px 12px;
+  margin: 0;
+  }
+
+.box-text {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 24px;  
+}
+
+.top-box-d,  
+.top-box-e {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: auto;
+  width: 100%;
+  box-shadow: var(--shadow);
+  margin-bottom: 20px;
+}
+
+.top-box-d:hover,
+.top-box-e:hover {
+  background-color: var(--primary);
+  box-shadow: var(--shadow);
+  transition: all 250ms linear 40ms;
+}
+
+.box-img {
+  display:flex;
+  align-content: center;
+  justify-content: center;
+  position: relative;
+  width: 700px;
+  height: 700px;
+  overflow: hidden;
+  margin: 16px
+}
+
+.box-img img {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+
+
+
+
+
+
+
+
+/* Scrollbar */
+
+/* width */
+::-webkit-scrollbar {
+  width: 55px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--dark);
+  box-shadow: inset 0 0 6px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(167,5,50);
+background: linear-gradient(180deg, rgba(167,5,50,1) 0%, rgba(214,11,67,1) 50%, rgba(218,35,2,0.9399073401162791) 100%);
+  border-radius: 40px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #A70532; 
+}
 
 
 
