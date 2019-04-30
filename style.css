@@ -20,7 +20,7 @@ html {
 
 body {
   background:var(--dark);
-  margin: 0;
+  margin: 0 auto;
   line-height: 1.4;
   font-size: 24px;
 }
@@ -129,6 +129,13 @@ display: none;
   width: 100%;
   min-height: 150px;
   margin: 0;
+}
+
+/******* This is my may of making the icons 'span' tags and links. This way, they would be inline easily and do not require nested markup. ********/
+
+.icon {
+  cursor: pointer;
+  color: white;
 }
 
 .icon-logo {
@@ -580,7 +587,7 @@ background: linear-gradient(180deg, rgba(167,5,50,1) 0%, rgba(214,11,67,1) 50%, 
 
 
 
-@media (min-width: 2600px) {
+@media (min-width: 2912px) {
 
 /* Logo */
 
@@ -689,7 +696,7 @@ background: linear-gradient(180deg, rgba(167,5,50,1) 0%, rgba(214,11,67,1) 50%, 
 margin-bottom: 48px;
 }
 
-/* Second Container */
+/******************************* Second Container **************************************/
 
 .second-container {
   display: flex;
@@ -697,6 +704,7 @@ margin-bottom: 48px;
   grid-gap: 20px;
   padding: 32px 24px;
   margin: 0;
+  width:100%;
   background-color: #fff;
 }
 
@@ -784,7 +792,7 @@ margin-bottom: 48px;
   width: 100%;
   height: auto;
   grid-gap: 32px;
-  grid-template-columns: repeat(auto-fit, minmax(1200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(1250px, 1fr));
   padding: 32px 72px ;
 }
 
@@ -904,7 +912,7 @@ margin-bottom: 48px;
   width: 700px;
   height: 700px;
   overflow: hidden;
-  margin: 16px
+  margin: 16px;
 }
 
 .box-img img {
@@ -915,7 +923,32 @@ margin-bottom: 48px;
 
 
 
+/************************* Footer ********************************/
 
+
+.footer {
+  background-color: #A70532;
+  color: #fff;
+  display: inline-block;
+  width: 100%;
+  padding: 50px 24px;
+}
+
+.footer a {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--light);
+  padding-right: 24px;
+  float: right;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+#copy {
+  font-size: 3rem;
+}
 
 
 
