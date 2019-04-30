@@ -131,7 +131,8 @@ display: none;
   margin: 0;
 }
 
-/******* This is my may of making the icons 'span' tags and links. This way, they would be inline easily and do not require nested markup. ********/
+/******* This is my may of making the icons 'span' tags and links. This way, they would be inline easily and do not require nested markup.
+Also removes the issue of an 'a' tag resizing the icons undersireably ********/
 
 .icon {
   cursor: pointer;
